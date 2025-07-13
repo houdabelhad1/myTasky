@@ -1,0 +1,52 @@
+### Get All Tasks
+GET http://localhost:8080/api/tasks
+Accept: application/json
+
+---
+
+### Get Task by ID (Using /task/{id})
+# Replace {id} with an actual task ID, e.g., 1
+GET http://localhost:8080/api/tasks/task/1
+Accept: application/json
+
+---
+
+### Get Task by ID (Using /{id}) - Better practice for single resource retrieval
+# Note: Your controller has both /task/{id} and /{id} for GET by ID.
+# This one aligns better with common REST practices.
+# Replace {id} with an actual task ID, e.g., 1
+GET http://localhost:8080/api/tasks/1
+Accept: application/json
+
+---
+
+### Create a New Task
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+  "title": "Learn Spring Boot",
+  "description": "Master REST APIs with Spring",
+  "completed": false
+}
+
+---
+
+### Update an Existing Task
+# Replace {id} with the ID of an existing task you want to update
+PUT http://localhost:8080/api/tasks/1
+Content-Type: application/json
+
+{
+  "title": "Spring Boot Advanced Topics",
+  "description": "Explore Spring Security and Microservices",
+  "completed": true
+}
+
+---
+
+### Delete a Task
+# Replace {id} with the ID of the task you want to delete
+DELETE http://localhost:8080/api/tasks/3
+
+---

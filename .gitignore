@@ -1,0 +1,58 @@
+# Dossiers gÃ©nÃ©rÃ©s par l'OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehThumbs.db
+Thumbs.db
+
+# Fichiers et dossiers spÃ©cifiques aux IDE
+.idea/             # IntelliJ IDEA
+*.iml              # IntelliJ IDEA
+*.iws              # IntelliJ IDEA
+*.ipr              # IntelliJ IDEA
+.vscode/           # VS Code (si vous ne voulez pas partager les configurations spÃ©cifiques Ã  l'utilisateur)
+.project           # Eclipse
+.classpath         # Eclipse
+.settings/         # Eclipse
+
+# Fichiers de log
+*.log
+logs/
+target/*.log
+
+# Fichiers Maven
+/backend/target/           # Dossier de compilation Maven pour le backend
+/backend/pom.xml.tag
+/backend/pom.xml.releaseBackup
+/backend/pom.xml.versionsBackup
+/backend/pom.xml.next
+/backend/release.properties
+/backend/dependency-reduced-pom.xml
+/backend/buildNumber.properties
+/backend/.mvn/timing.properties
+#/backend/.mvn/wrapper/maven-wrapper.jar # DÃ©commenter si vous ne voulez pas inclure le wrapper Maven
+
+# Fichiers spÃ©cifiques Ã  Spring Boot
+/backend/build/
+/backend/out/
+
+# Lombok (si utilisÃ©)
+/backend/.apt_generated/
+
+# Bases de donnÃ©es embarquÃ©es (H2, SQLite, etc.)
+*.mv.db
+*.trace.db
+*.sqlite
+
+# Fichiers Node.js / Frontend (si vous avez un dossier frontend)
+/frontend/node_modules/  # Dossier des dÃ©pendances Node.js
+/frontend/dist/          # Dossier de build (ex: pour Vue, React, Angular)
+/frontend/build/         # Un autre dossier de build commun
+/frontend/.parcel-cache/ # Cache de Parcel
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+/frontend/.env           # Fichiers d'environnement (devraient Ãªtre gÃ©nÃ©rÃ©s par les pipelines CI/CD)
+/frontend/.env.*
