@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build-backend:
-    name: Build Backend
+    name: Build Backend + Tests
     runs-on: ubuntu-latest
 
     defaults:
@@ -22,7 +22,10 @@ jobs:
           distribution: 'temurin'
 
       - name: Build avec Maven
-        run: mvn clean install
+        run: mvn clean install -DskipTests
+
+      - name: Exécuter les tests unitaires
+        run: mvn test
 
       - name: Upload JAR comme artifact
         uses: actions/upload-artifact@v4
