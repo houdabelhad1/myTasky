@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build-backend:
-    name: Build Backend + Tests
+    name: Build + Test + Report
     runs-on: ubuntu-latest
 
     defaults:
@@ -12,7 +12,7 @@ jobs:
         working-directory: backend
 
     steps:
-      - name: Checkout le code
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Set up JDK 17
@@ -21,14 +21,20 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Build avec Maven
+      - name: Build (sans tests)
         run: mvn clean install -DskipTests
 
-      - name: Exécuter les tests unitaires
+      - name: Run Unit Tests
         run: mvn test
 
-      - name: Upload JAR comme artifact
+      - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
           name: springboot-app
           path: backend/target/*.jar
+
+      - name: Upload test reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: backend/target/surefire-reports
