@@ -23,7 +23,7 @@ import lombok.ToString;
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long taskId; // <-- Changed back to taskId
+    private Long taskId; 
     private String title;
     private String description;
     private boolean completed;
