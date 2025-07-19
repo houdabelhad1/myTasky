@@ -23,3 +23,9 @@ jobs:
 
       - name: Build avec Maven
         run: mvn clean install
+
+      - name: Upload JAR comme artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: springboot-app
+          path: backend/target/*.jar
